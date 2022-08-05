@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+# Path to find the directory with the configuration files for each service.
+spring:
+#  profiles:
+#    active: native
+  cloud:
+    config:
+      server:
+# This configuration is useful for testing purposes
+#        native:
+#          search-locations: file://${user.home}/DEV/java/SpringCloud/spring-cloud-demo/config-data
+        git:
+          uri: https://github.com/MauroRussi/spring-cloud-docker.git
+          default-label: main
+          searchPaths: config-data
+# For demo purposes: MauroDemo / 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
+          username: ${GIT_USER}
+          password: ${GIT_PASSWORD}
+  security:
+    user:
+      name: root
+      password: s3cr3t
+
