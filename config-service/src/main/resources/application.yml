@@ -15,7 +15,6 @@ spring:
           uri: https://github.com/MauroRussi/spring-cloud-docker.git
           default-label: main
           searchPaths: config-data
-# For demo purposes: MauroDemo / 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
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
   security:
