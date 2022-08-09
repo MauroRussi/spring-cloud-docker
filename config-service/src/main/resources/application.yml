@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8080
 
 # Path to find the directory with the configuration files for each service.
 spring:

@@ -2,7 +2,7 @@
 image_name = registry-service:latest
 container_name = registry-service
 network_name = spring-cloud-docker-net
-container_internal_port = 8099
+container_internal_port = 8080
 container_external_port = 8099
 
 ######### Main tasks definition #########

@@ -2,7 +2,7 @@
 image_name = admin-service:latest
 container_name = admin-service
 network_name = spring-cloud-docker-net
-container_internal_port = 8086
+container_internal_port = 8080
 container_external_port = 8086
 
 ######### Main tasks definition #########

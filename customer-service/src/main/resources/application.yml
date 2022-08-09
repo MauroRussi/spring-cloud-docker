@@ -5,7 +5,7 @@ spring:
   config:
 # Remove the optional to force the config client fail if it can't connect
     #import: optional:configserver:http://localhost:8081
-    import: configserver:http://config-service:8081
+    import: configserver:http://config-service:8080
   cloud:
     config:
       username: root
@@ -13,4 +13,4 @@ spring:
   boot:
     admin:
       client:
-        url: http://admin-service:8086
+        url: http://admin-service:8080

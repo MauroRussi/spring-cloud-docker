@@ -3,7 +3,6 @@ image_name = customer-service:latest
 container_name = customer-service
 network_name = spring-cloud-docker-net
 container_internal_port = 8080
-container_external_port = 8092
 
 ######### Main tasks definition #########
 .PHONY: help
@@ -17,7 +16,7 @@ build: clean check ## Build the project using gradle and build the image in dock
 	docker build --tag=$(image_name) .
 
 run: ## Run the container in detach mode
-	docker run -d --rm --net $(network_name) -p$(container_external_port):$(container_internal_port) --name=$(container_name) $(image_name)
+	docker run -d --rm --net $(network_name) --name=$(container_name) $(image_name)
 
 stop: ## Stop the running container
 	docker stop $(container_name)

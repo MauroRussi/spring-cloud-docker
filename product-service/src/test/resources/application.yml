@@ -1,6 +1,6 @@
 # Application Configuration for Test profile
 server:
-  port: 8092
+  port: 8080
   error:
     # Since SpringBoot 2.3 message response is hidden to avoid leaking sensitive information
     include-message: always

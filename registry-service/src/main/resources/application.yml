@@ -2,7 +2,7 @@ spring:
   application:
     name: registry-service
   config:
-    import: configserver:http://config-service:8081
+    import: configserver:http://config-service:8080
   cloud:
     config:
       username: root
