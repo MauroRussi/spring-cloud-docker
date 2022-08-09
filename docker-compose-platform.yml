@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  config-service:
+    image: config-service
+    container_name: config-service
+    env_file:
+      - ./config-service/.env
+    networks:
+      spring-cloud-docker-net:
+  
+  admin-service:
+    image: admin-service
+    container_name: admin-service
+    ports:
+      - "8086:8080"    
+    networks:
+      spring-cloud-docker-net:
+
+  registry-service:
+    image: registry-service
+    container_name: registry-service
+    ports:
+      - "8099:8080"    
+    depends_on: 
+      - config-service
+    networks:
+      spring-cloud-docker-net:
+    restart: on-failure
+
+  gateway-service:
+    image: gateway-service
+    container_name: gateway-service
+    ports:
+      - "8080:8080"    
+    depends_on: 
+      - registry-service
+    networks:
+      spring-cloud-docker-net:
+    restart: on-failure
+
+networks:
+  spring-cloud-docker-net:
+    name: spring-cloud-docker-net

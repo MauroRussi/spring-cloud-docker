@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  product-service:
+    image: product-service
+    container_name: product-service
+    networks:
+      spring-cloud-docker-net:
+  
+  customer-service:
+    image: customer-service
+    container_name: customer-service
+    networks:
+      spring-cloud-docker-net:
+
+  shopping-service:
+    image: shopping-service
+    container_name: shopping-service
+    networks:
+      spring-cloud-docker-net:
+
+networks:
+  spring-cloud-docker-net:
+    name: spring-cloud-docker-net

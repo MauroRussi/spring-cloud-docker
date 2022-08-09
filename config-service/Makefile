@@ -3,7 +3,6 @@ env_filename = .env
 image_name = config-service:latest
 container_name = config-service
 network_name = spring-cloud-docker-net
-container_internal_port = 8081
 
 ######### Main tasks definition #########
 .PHONY: help
